@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT CORDOVA 2 CITRARAYA - SD, SMP, SMA Islam Terpadu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="cordova.png">
+    <link rel="apple-touch-icon" href="cordova.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+        }
+
+        .hero-pattern {
+            background-color: #064e3b;
+            background-image: radial-gradient(circle at 2px 2px, #065f46 1px, transparent 0);
+            background-size: 40px 40px;
+            position: relative;
+        }
+
+        .hero-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95) 0%, rgba(6, 95, 70, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .custom-shape-divider {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+
+        .visi-card {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .misi-item {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .misi-item:hover {
+            border-left: 4px solid #fbbf24;
+            background: rgba(6, 78, 59, 0.03);
+            transform: translateX(10px);
+        }
+
+        .level-card, .facility-card, .program-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .level-card:hover, .facility-card:hover, .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(6, 78, 59, 0.1);
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 3rem;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .wa-link {
+            transition: all 0.3s ease;
+        }
+        .wa-link:hover {
+            color: #10b981;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigasi -->
+    <nav class="glass-nav fixed w-full z-50 top-0 py-4 border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <img src="cordova.png" alt="Logo SIT Cordova 2" class="w-16 h-16 object-contain" onerror="this.src='https://via.placeholder.com/80?text=C2'">
+                <div>
+                    <h1 class="font-extrabold text-emerald-900 leading-none text-xl tracking-tight">SIT CORDOVA 2</h1>
+                    <p class="text-[10px] text-emerald-600 font-bold tracking-[0.2em] uppercase mt-1">Citraraya</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8 font-bold text-sm">
+                <a href="#beranda" class="text-emerald-700">Beranda</a>
+                <a href="#visi-misi" class="text-slate-600 hover:text-emerald-700">Visi Misi</a>
+                <a href="#jenjang" class="text-slate-600 hover:text-emerald-700">Jenjang</a>
+                <a href="#fasilitas" class="text-slate-600 hover:text-emerald-700">Fasilitas</a>
+                <a href="#program" class="text-slate-600 hover:text-emerald-700">Program</a>
+                <a href="#kontak" class="bg-emerald-700 text-white px-6 py-3 rounded-xl hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-900/20">PPDB 2026</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bagian Hero -->
+    <section id="beranda" class="hero-pattern relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center z-10 relative">
+            <div data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-md text-yellow-400 rounded-full text-[10px] font-black tracking-widest mb-6 border border-white/10 uppercase">
+                    Penerimaan Siswa Baru 2026/2027
+                </span>
+                <h2 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] mb-8">
+                    Mencetak Generasi <br>
+                    <span class="text-yellow-400">Beraura Qur'ani</span>
+                </h2>
+                <p class="text-lg text-emerald-50/70 mb-10 max-w-xl leading-relaxed">
+                    Pendidikan Islam Terpadu SIT Cordova 2 yang mengintegrasikan adab, ilmu, dan kemandirian untuk masa depan gemilang di Citraraya Tangerang.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#kontak" class="bg-yellow-400 text-emerald-950 font-black px-10 py-4 rounded-xl hover:bg-white transition-all shadow-xl">
+                        Daftar Online
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden md:block relative" data-aos="fade-left">
+                <img src="siswa-hero.png" alt="Siswa Cordova 2" class="relative z-10 w-full rounded-[3rem] shadow-2xl border-8 border-white/10" onerror="this.src='https://images.unsplash.com/photo-1577891772227-32f58677043d?q=80&w=2070&auto=format&fit=crop'">
+            </div>
+        </div>
+
+        <div class="custom-shape-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="h-20 w-full fill-slate-50">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Bagian Visi & Misi -->
+    <section id="visi-misi" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-5 gap-16 items-start">
+                
+                <!-- Kartu Visi -->
+                <div class="lg:col-span-2" data-aos="fade-right">
+                    <div class="visi-card p-10 md:p-12 rounded-[3rem] text-white shadow-2xl relative">
+                        <i class="fas fa-quote-left absolute top-10 right-10 text-6xl opacity-10"></i>
+                        <span class="text-yellow-400 font-bold tracking-widest text-xs uppercase mb-6 block">Visi Kami</span>
+                        <h3 class="text-3xl md:text-4xl font-extrabold mb-8 leading-tight">Visi Sekolah</h3>
+                        <p class="text-xl md:text-2xl font-medium leading-relaxed italic text-emerald-50">
+                            "Menjadi sekolah pilihan masyarakat yang dapat melahirkan generasi unggul, berakhlaq mulia, berjiwa entrepreneurship, berwawasan global, dan siap menjadi pemimpin masa depan bersama SIT Cordova 2."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Daftar Misi -->
+                <div class="lg:col-span-3" data-aos="fade-left">
+                    <span class="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-6 block">Misi Kami</span>
+                    <h3 class="text-4xl font-extrabold text-emerald-950 mb-10">Misi Sekolah</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">1</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Mengembangkan proses pembelajaran yang dinamis dan inovatif serta berorientasi pada penguatan karakter.</p>
+                        </div>
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">2</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Mewujudkan lingkungan yang aman dan nyaman bagi seluruh warga sekolah.</p>
+                        </div>
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">3</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Menerapkan pembelajaran aktif, kreatif, efektif dan menyenangkan dengan metode DNA dan multimedia.</p>
+                        </div>
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">4</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Mewujudkan sarana dan prasarana sekolah sesuai standar mutu pendidikan nasional.</p>
+                        </div>
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">5</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Menyiapkan lulusan yang memiliki spirit kewirausahaan dan mental kepemimpinan yang tangguh.</p>
+                        </div>
+                        <div class="misi-item p-5 bg-white rounded-2xl shadow-sm flex gap-6 items-start">
+                            <span class="w-10 h-10 shrink-0 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center font-bold">6</span>
+                            <p class="text-slate-600 leading-relaxed font-medium">Mencetak generasi yang menguasai IPTEK, berakhlakul karimah, serta memiliki berwawasan global.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Jenjang -->
+    <section id="jenjang" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-black text-emerald-950 mb-4">Jenjang Pendidikan</h3>
+                <div class="w-20 h-1.5 bg-yellow-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="level-card bg-slate-50 p-10 rounded-[2.5rem] text-center border border-slate-100" data-aos="fade-up">
+                    <div class="text-4xl mb-6">🎒</div>
+                    <h4 class="text-2xl font-extrabold text-emerald-900 mb-4">SDIT Cordova 2</h4>
+                    <p class="text-slate-500 mb-6">Fase pembentukan karakter dasar, aqidah, dan pembiasaan adab islami.</p>
+                    <button class="text-emerald-700 font-bold flex items-center gap-2 mx-auto">Selengkapnya <i class="fas fa-chevron-right text-xs"></i></button>
+                </div>
+                
+                <div class="level-card bg-emerald-900 p-10 rounded-[2.5rem] text-center text-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl mb-6">📚</div>
+                    <h4 class="text-2xl font-extrabold text-yellow-400 mb-4">SMPIT Cordova 2</h4>
+                    <p class="text-emerald-50/60 mb-6">Pengembangan intelektual, kepemimpinan, dan kedisiplinan remaja.</p>
+                    <button class="text-yellow-400 font-bold flex items-center gap-2 mx-auto">Selengkapnya <i class="fas fa-chevron-right text-xs"></i></button>
+                </div>
+
+                <div class="level-card bg-slate-50 p-10 rounded-[2.5rem] text-center border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-6">🎓</div>
+                    <h4 class="text-2xl font-extrabold text-emerald-900 mb-4">SMAIT Cordova 2</h4>
+                    <p class="text-slate-500 mb-6">Persiapan kemandirian, sukses PTN, dan spesialisasi minat bakat.</p>
+                    <button class="text-emerald-700 font-bold flex items-center gap-2 mx-auto">Selengkapnya <i class="fas fa-chevron-right text-xs"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Fasilitas -->
+    <section id="fasilitas" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div data-aos="fade-right">
+                    <h3 class="text-4xl font-black text-emerald-950 mb-4">Fasilitas Modern</h3>
+                    <p class="text-slate-500">Sarana pendukung belajar SIT Cordova 2 yang representatif untuk kenyamanan dan pertumbuhan siswa.</p>
+                </div>
+                <div class="w-24 h-1 bg-yellow-400 rounded-full" data-aos="zoom-in"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-mosque"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Masjid</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-flask"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Lab IPA</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-desktop"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Lab Komputer</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="150">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-running"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Lapangan Olahraga</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-users"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Ballroom</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="250">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-utensils"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Kantin</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-parking"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Parkiran Luas</h5></div>
+                </div>
+                <div class="facility-card group bg-white rounded-[2rem] shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="350">
+                    <div class="h-40 flex items-center justify-center text-5xl text-emerald-700 bg-emerald-50 rounded-t-[2rem]"><i class="fas fa-snowflake"></i></div>
+                    <div class="p-6 text-center"><h5 class="font-bold text-emerald-900">Kelas Ber-AC</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Program Unggulan -->
+    <section id="program" class="py-24 bg-emerald-950 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="text-4xl font-black mb-4">Program Unggulan</h3>
+                <p class="text-emerald-100/50">Membekali siswa dengan kompetensi Al-Qur'an, Bahasa, Sains, dan Soft Skills.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Tahfidz -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in">
+                    <div class="w-14 h-14 bg-yellow-400 rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5 shadow-lg shadow-yellow-400/20"><i class="fas fa-quran"></i></div>
+                    <h5 class="font-bold text-sm">Tahfidz Al-Qur'an</h5>
+                </div>
+                <!-- English & Arabic -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-language"></i></div>
+                    <h5 class="font-bold text-sm">English & Arabic Club</h5>
+                </div>
+                <!-- Memanah -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-bullseye"></i></div>
+                    <h5 class="font-bold text-sm">Memanah</h5>
+                </div>
+                <!-- Futsal -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-futbol"></i></div>
+                    <h5 class="font-bold text-sm">Futsal Club</h5>
+                </div>
+                <!-- Design Grafis -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-palette"></i></div>
+                    <h5 class="font-bold text-sm">Design Grafis</h5>
+                </div>
+                <!-- Renang -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-swimmer"></i></div>
+                    <h5 class="font-bold text-sm">Renang</h5>
+                </div>
+                <!-- Taekwondo -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-fist-raised"></i></div>
+                    <h5 class="font-bold text-sm">Taekwondo</h5>
+                </div>
+                <!-- Robotik -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-robot"></i></div>
+                    <h5 class="font-bold text-sm">Robotik</h5>
+                </div>
+                <!-- Mini Riset -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-microscope"></i></div>
+                    <h5 class="font-bold text-sm">Mini Riset</h5>
+                </div>
+                <!-- Super Camp -->
+                <div class="program-card bg-white/5 p-8 rounded-3xl border border-white/10 text-center" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-emerald-950 text-2xl mx-auto mb-5"><i class="fas fa-campground"></i></div>
+                    <h5 class="font-bold text-sm">Super Camp</h5>
+                </div>
+                <!-- Edu Trip -->
+                <div class="program-card bg-white/10 p-8 rounded-3xl border border-yellow-400/30 text-center col-span-2 md:col-span-1 lg:col-span-2" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-5 shadow-lg"><i class="fas fa-plane-departure"></i></div>
+                    <h5 class="font-black text-yellow-400 text-sm">Edu Trip Luar Negeri</h5>
+                    <p class="text-[10px] text-emerald-100/60 mt-2">Wawasan Global & Pengalaman Internasional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Lokasi -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-4xl font-black text-emerald-950 mb-6">Lokasi Strategis</h3>
+                <p class="text-slate-600 mb-8 leading-relaxed">SIT Cordova 2 berlokasi di kawasan Citra Raya yang berkembang pesat. Akses mudah, lingkungan aman, dan sangat kondusif untuk mendukung fokus belajar putra-putri Anda.</p>
+                <div class="flex items-start gap-4 p-6 bg-slate-50 rounded-3xl border border-slate-100 mb-8">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center shrink-0"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h6 class="font-bold text-emerald-950">Alamat Sekolah</h6>
+                        <p class="text-slate-500 text-sm leading-relaxed">Jalan Citra Raya Utama, Cikupa, Kabupaten Tangerang, Banten 15710</p>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/UVCvdEuVmuPsR9Pu8" target="_blank" class="inline-flex items-center gap-3 bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold hover:bg-emerald-800 transition-all shadow-xl shadow-emerald-900/20"><i class="fas fa-directions"></i> Petunjuk Arah</a>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="map-container shadow-2xl border-8 border-slate-50">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.305193496464!2d106.5218738!3d-6.2234316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42008e75e92621%3A0xc6696700c0f83863!2sSIT%20CORDOVA%20CITRARAYA!5e0!3m2!1sid!2sid!4v1705051200000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <!-- Brand -->
+            <div class="col-span-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <img src="cordova.png" alt="Logo" class="w-12 h-12" onerror="this.src='https://via.placeholder.com/50'">
+                    <h4 class="text-xl font-black">SIT CORDOVA 2</h4>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">Membentuk generasi beraura Qur'ani, cerdas intelektual, dan mandiri sejak usia dini di Citraraya bersama SIT Cordova 2.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-emerald-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-emerald-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-emerald-600 transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Info PPDB -->
+            <div class="col-span-1 md:col-span-2">
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10">
+                    <h5 class="text-yellow-400 font-extrabold mb-6 flex items-center gap-3">
+                        <span class="text-2xl">📞</span> 
+                        <span class="tracking-tight uppercase">Informasi PPDB SIT Cordova 2</span>
+                    </h5>
+                    
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <!-- SD -->
+                        <div class="space-y-2">
+                            <span class="block text-[10px] font-black uppercase text-emerald-400 tracking-widest">Jenjang SD</span>
+                            <a href="https://wa.me/6281320195142?text=Halo%20Ms.%20Endah,%20saya%20ingin%20tanya%20mengenai%20PPDB%20SD%20SIT%20Cordova%202" target="_blank" class="wa-link block text-lg font-bold flex items-center gap-2 text-white">
+                                0813-2019-5142 <i class="fab fa-whatsapp text-sm"></i>
+                            </a>
+                            <p class="text-slate-400 text-xs italic">Ms. Endah</p>
+                        </div>
+                        <!-- SMP -->
+                        <div class="space-y-2">
+                            <span class="block text-[10px] font-black uppercase text-emerald-400 tracking-widest">Jenjang SMP</span>
+                            <a href="https://wa.me/6285779598632?text=Halo%20Ms.%20Yayuk,%20saya%20ingin%20tanya%20mengenai%20PPDB%20SMP%20SIT%20Cordova%202" target="_blank" class="wa-link block text-lg font-bold flex items-center gap-2 text-white">
+                                0857-7959-8632 <i class="fab fa-whatsapp text-sm"></i>
+                            </a>
+                            <p class="text-slate-400 text-xs italic">Ms. Yayuk</p>
+                        </div>
+                        <!-- SMA -->
+                        <div class="space-y-2">
+                            <span class="block text-[10px] font-black uppercase text-emerald-400 tracking-widest">Jenjang SMA</span>
+                            <a href="https://wa.me/6281298045857?text=Halo%20Ms.%20Astri,%20saya%20ingin%20tanya%20mengenai%20PPDB%20SMA%20SIT%20Cordova%202" target="_blank" class="wa-link block text-lg font-bold flex items-center gap-2 text-white">
+                                0812-9804-5857 <i class="fab fa-whatsapp text-sm"></i>
+                            </a>
+                            <p class="text-slate-400 text-xs italic">Ms. Astri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-16 mt-16 border-t border-white/5 text-center text-slate-500 text-xs">
+            &copy; 2026 SIT Cordova 2 Citraraya. 
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
